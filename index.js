@@ -1,32 +1,32 @@
 // Write your solution in this file!
 const employee = {
-    name: 'Edwin',
-    streetAddress: "123 Main Street"
+    name: 'Edwin Soto',
+    streetAddress: '123 Palisade Ave'
 }
 
-function updateEmployeeWithKeyAndValue(employeeObject, key, value){
-        const newEmployee = {
-            ...employee};
+// this function should take in three arguments: 
+// an employee Object, a key and a value. 
+///This function should not mutate the employee; it should return a new Object that has an updated value for the key passed in. Hint: use the spread operator!
 
-             newEmployee[key] = value;
-           return newEmployee;
+function updateEmployeeWithKeyAndValue(obj, key, value){
+   let newEmployee = {...employee};
+   newEmployee[key] = value
+   return newEmployee
+}
+// work the same as above but mutate the employee object
+function destructivelyUpdateEmployeeWithKeyAndValue(obj, key, value){
+    obj[key]= value;
+    return obj
 }
 
-function destructivelyUpdateEmployeeWithKeyAndValue(employeeObject, key, value) {
-        employee[key] = value;
-        return employee;
+// should take in employee obj and key. Should delete the property with that key and not mutate original
+function deleteFromEmployeeByKey(obj, key){
+    let arrayNew = {...obj};
+    delete arrayNew[key]
+    return arrayNew
 }
-
-function deleteFromEmployeeByKey(employee, key){
-      const newDeleted = {
-        ...employee}
-        delete newDeleted[key];
-        return newDeleted;
-    
-
-}
-
-function destructivelyDeleteFromEmployeeByKey(employee, key){
-    delete employee[key];
-    return employee;
+// this function should work the same as above but mutate original 
+function destructivelyDeleteFromEmployeeByKey(obj, key){
+    delete obj[key]
+    return obj
 }
